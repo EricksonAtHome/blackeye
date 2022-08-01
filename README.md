@@ -28,3 +28,6 @@
 
 -----------------------------------------------------------------------------------------------------------------------------
 
+### Coded by: @thelinuxchoice (https://github.com/thelinuxchoice/blackeye)
+### Upgraded by: @EricksonAtHome (https://github.com/EricksonAtHome/blackeye)
+
