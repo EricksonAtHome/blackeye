@@ -22,8 +22,9 @@
           [14] Pinterest      [30] Steam                                
           [15] Apple ID       [31] Tiktok      
           
-##### Add: Ngrok and Localtunnel
-###   Contact me on Instagram : @ericksonhlding or on responded.erickson.elite
+##### Add:  Localtunnel
+##### Update: Ngrok 
+###   Contact me on Instagram : @EricksonHolding or on responded.erickson.elite
 
 -----------------------------------------------------------------------------------------------------------------------------
 
