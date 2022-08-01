@@ -45,5 +45,9 @@ cd blackeye
 bash blackeye.sh
 ```
 
-### Donate!
-Support the authors:
+### Donate! @EricksonHolding
+Donate And Support:
+
+BTC: 3EUgv8me3wDLLQ5rPRGKfdkkoXD4fozLHu
+LTC: MPgfYyVWqnUHFPhFRjETAAgfMHgKdaEFP1
+
