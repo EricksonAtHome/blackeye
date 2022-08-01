@@ -1,8 +1,5 @@
 ## BLACKEYE v2.0
-### UPDATES :
-##### Added 10 new websites from the Pro version!
 ##### The tool is completely free now
-####  FOR ANY SUGGESTION CONTACT :@suljot_gjoka on Instagram!
 
 -----------------------------------------------------------------------------------------------------------------------------
 
