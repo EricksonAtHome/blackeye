@@ -3,6 +3,9 @@
 
 -----------------------------------------------------------------------------------------------------------------------------
 
+![alt text](https://raw.githubusercontent.com/openc7/c7/main/background.png)
+
+
 ### UPDATES :
 ##### UPDATES_TMP websites :          
 
