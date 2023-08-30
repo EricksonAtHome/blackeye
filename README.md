@@ -3,7 +3,7 @@
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-![alt text](https://raw.githubusercontent.com/openc7/c7/main/background.png)
+![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bgscr.png)
 
 
 ### UPDATES :
