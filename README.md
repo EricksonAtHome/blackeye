@@ -1,4 +1,4 @@
-## BLACKEYE v2.0 (Big update, in a month New: bank template, and update afterwards, Add localhost, and more)
+## BLACKEYE v2.0 (Big update, in a month 12:01:2024 | New: bank template, and update afterwards, Add localhost, and more)
 ##### The tool is completely free now 
 
 -----------------------------------------------------------------------------------------------------------------------------
