@@ -54,7 +54,7 @@ cd blackeye
 bash blackeye.sh
 ```
 
-![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bgscr.png)
+![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/hiws.png)
 
 ### Donate! @EricksonHolding
 Donate And Support:
