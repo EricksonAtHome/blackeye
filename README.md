@@ -43,7 +43,13 @@ Usage of BlackEye for attacking targets without prior mutual consent is illegal.
 
 ### Usage:
 ```
-Download and clone on https://blackeye.ericksonholding.com/blackeye.zip to your computer 
+curl -O https://blackeye.ericksonholding.com/blackeye.zip
+cd blackeye
+bash blackeye.sh
+```
+### Usage PowerShell:
+```
+Invoke-WebRequest -Uri https://blackeye.ericksonholding.com/blackeye.zip -OutFile blackeye.zip
 cd blackeye
 bash blackeye.sh
 ```
