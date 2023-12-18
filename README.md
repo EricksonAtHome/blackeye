@@ -3,9 +3,6 @@
 
 -----------------------------------------------------------------------------------------------------------------------------
 ![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bkev3.png)
-
-12:01:2024 Preview Update
-
 ![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/scr2.png)
 
 ![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bgscr.png)
