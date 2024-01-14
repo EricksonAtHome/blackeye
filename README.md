@@ -1,6 +1,8 @@
-## BLACKEYE v2.0 (Major Update on August 23, 2024 | New: Bank Template, Upcoming Localhost Feature, and More) Your donations play a vital role in expediting the project's completion. With your support, we can swiftly bring this enhanced version to life and continue delivering valuable updates.
-
+## BLACKEYE v2.0 (Major Update on August 23, 2024 | New: Bank Template, Upcoming Localhost Feature, and More)
 ##### The tool is completely free now 
+
+> [!Need Donations]
+> Your donations play a vital role in expediting the project's completion. With your support, we can swiftly bring this enhanced version to life and continue delivering valuable updates.
 
 -----------------------------------------------------------------------------------------------------------------------------
 ![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bkev3.png)
