@@ -8,7 +8,7 @@
 
 ![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/scr2.png)
 
-![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bgscr.png)
+![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bankofa.png)
 
 ### UPDATES :
 ##### UPDATES_TMP websites :          
