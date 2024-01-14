@@ -59,10 +59,6 @@ bash blackeye.sh
 
 ![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/hiws.png)
 
-23:08:2024  Preview Update
-
-![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/scr22.png)
-
 ### Donate! @EricksonHolding
 Donate And Support:
 -----------------------------------------------------------------------------------------------------------------------------
