@@ -62,7 +62,7 @@ cd blackeye
 bash blackeye.sh
 ```
 
-![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/hiws.png)
+![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/hiws2.png)
 
 ### Donate! @EricksonHolding
 Donate And Support:
