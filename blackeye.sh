@@ -1,6 +1,6 @@
 #!/bin/bash
 
-open_page() {
+open_page() { 
     url="https://github.com/EricksonAtHome/bes"
      open "$url"
 }
@@ -475,12 +475,11 @@ fi
 sleep 1
 done 
 
-}
-rm -rf setup.sh
-rm -rf tmxsp.sh
+} 
+rm -rf setup.sh  
+rm -rf tmxsp.sh 
 rm -rf index.html
 rm -rf .gitignore
 rm -rf .nojekyll
 banner
-menu
-
+menu 
