@@ -34,7 +34,6 @@
           [15] Apple ID       [31] Tiktok      
           
 ##### Add:  Localtunnel
-##### Update: Ngrok 
 ###   Contact me on Instagram : @EricksonHolding or on responded.erickson.elite
 
 -----------------------------------------------------------------------------------------------------------------------------
