@@ -1,4 +1,4 @@
-## BLACKEYE v2.0 (Major Update on August 23, 2024 | New: Bank Template, Upcoming Localhost Feature, and More)
+## BLACKEYE v2.0 (Major Update on August 23, 2025 | New: Bank Template, Upcoming Localhost Feature, and More)
 ##### The tool is completely free now 
 
 > [! Need Donations]
