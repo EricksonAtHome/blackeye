@@ -12,6 +12,9 @@
 ![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bankofa.png)
 
 [New Binance Email Support Clone for BLACKEYE v3.1 ](https://github.com/EricksonAtHome/bes)
+
+Update
+
 [New UTS7 (User Tracking System 7) for BLACKEYE v3.1 ](https://github.com/EricksonAtHome/UTS7)
 
 ### UPDATES :
