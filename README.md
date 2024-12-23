@@ -1,9 +1,10 @@
 ## BLACKEYE v2.0 (Major Update on August 23, 2025 | New: Bank Template, Upcoming Localhost Feature, and More)
 ##### The tool is completely free now 
+##### Creat by EricksonAtHome
 
 > [! Need Donations]
-> Your donations play a vital role in expediting the project's completion. With your support, we can swiftly bring this enhanced version to life and continue delivering valuable updates. [1]: [https://www.buymeacoffee.com/ericksonathome] "Buy Me a Coffee (myberp)"
-                                 
+> Your donations play a vital role in expediting the project's completion. With your support, we can swiftly bring this enhanced version to life and continue delivering valuable updates. [1]: [https://www.buymeacoffee.com/myberp] "Buy Me a Coffee (myberp)"
+
 -----------------------------------------------------------------------------------------------------------------------------
 ![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bkev3.png)
 
@@ -38,7 +39,7 @@ Update
           [15] Apple ID       [31] Tiktok      
           
 ##### Add:  Localtunnel
-###   Contact me on Instagram : @EricksonHolding or on responded.erickson.elite
+###   Contact me on X : @amirmahdizare or on responded.erickson.elite
 
 -----------------------------------------------------------------------------------------------------------------------------
 ### Coded/Upgraded by: @EricksonAtHome (https://github.com/EricksonAtHome/blackeye)
@@ -50,7 +51,21 @@ Update
 BLACKEYE is an upgrade from original ShellPhish Tool (https://shellphish.net) by thelinuxchoice under GNU LICENSE. It is the most complete Phishing Tool,  with 32 templates +1 customizable
 
 ## Legal disclaimer:
-Usage of BlackEye for attacking targets without prior mutual consent is illegal. It's the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no liability and are not responsible for any misuse or damage caused by this program. Only use for educational purposes.
+Usage of BlackEye for attacking targets without prior mutual consent is illegal. It's the end user's responsibility to obey all applicable local, state and federal laws. Developers assume no  liability and are not responsible for any misuse or damage caused by this program. Only use for educational purposes.
+
+### Installation:
+1. Clone the repository:
+    ```sh
+    git clone https://github.com/amir13872/blackeye.git
+    ```
+2. Navigate to the project directory:
+    ```sh
+    cd blackeye
+    ```
+3. Install dependencies:
+    ```sh
+    yarn install
+    ```
 
 ### Usage:
 ```
@@ -65,17 +80,15 @@ cd blackeye
 bash blackeye.sh
 ```
 
-### Introduction Video HOW INSTALL blackeye
+### Usage with ngrok:
+1. Download and install ngrok from [ngrok.com](https://ngrok.com/).
+2. Start the script:
+    ```sh
+    bash blackeye.sh
+    ```
+3. Choose ngrok as the tunneling method when prompted.
 
-[Watch the Introduction Video](https://www.dropbox.com/scl/fi/j9kn2cz4mk1uh3uz6cnnb/V-deo-31-3-24-17-07-24.mov?rlkey=j9gms5hmgaedz6pw7axi86gil&dl=0)
 
 
-![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/hiws2.png)
 
-### Donate! @EricksonHolding
-Donate And Support:
------------------------------------------------------------------------------------------------------------------------------
-BTC: bc1qmz5qmhyfzrm9hn2gnus85exhry64a8zekyzjuu
------------------------------------------------------------------------------------------------------------------------------
-LTC: ltc1qk4cuts4w8202tr2efun4c380n6nsq4eafxlg4k
------------------------------------------------------------------------------------------------------------------------------
+
