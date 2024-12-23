@@ -2,8 +2,8 @@
 ##### The tool is completely free now 
 
 > [! Need Donations]
-> Your donations play a vital role in expediting the project's completion. With your support, we can swiftly bring this enhanced version to life and continue delivering valuable updates. [1]: [https://www.buymeacoffee.com/myberp] "Buy Me a Coffee (myberp)"
-
+> Your donations play a vital role in expediting the project's completion. With your support, we can swiftly bring this enhanced version to life and continue delivering valuable updates. [1]: [https://www.buymeacoffee.com/ericksonathome] "Buy Me a Coffee (myberp)"
+                                 
 -----------------------------------------------------------------------------------------------------------------------------
 ![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bkev3.png)
 
