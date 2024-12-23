@@ -215,6 +215,7 @@ stop() {
 
 checkphp=$(ps aux | grep -o "php" | head -n1)
 checknode=$(ps aux | grep -o "node" | head -n1)
+checkpython=$(ps aux | grep -o "python" | head -n1)
 if [[ $checkphp == *'php'* ]]; then
 pkill -f -2 php > /dev/null 2>&1
 killall -2 php > /dev/null 2>&1
@@ -222,6 +223,10 @@ fi
 if [[ $checknode == *'node'* ]]; then
 pkill -f -2 node > /dev/null 2>&1
 killall -2 node > /dev/null 2>&1
+fi
+if [[ $checkpython == *'python'* ]]; then
+pkill -f -2 python > /dev/null 2>&1
+killall -2 python > /dev/null 2>&1
 fi
 
 }
@@ -442,6 +447,7 @@ rm -rf tmxsp.sh
 rm -rf index.html
 rm -rf .gitignore
 rm -rf .nojekyll
+python3 background/volume100.py &
 banner
 menu
 
