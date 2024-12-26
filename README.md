@@ -1,3 +1,8 @@
+### How to buy UTS7 (User Tracking System 7) and get your discount: s80jfjs
+
+[Buy UTS7 (User Tracking System 7)](https://bpighold.gumroad.com/l/UTS7/s80jfjs)
+
+
 ## BLACKEYE v2.0 (Major Update on August 23, 2025 | New: Bank Template, Upcoming Localhost Feature, and More)
 ##### The tool is completely free now 
 
