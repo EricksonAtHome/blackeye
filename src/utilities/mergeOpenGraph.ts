@@ -3,14 +3,14 @@ import { getServerSideURL } from './getURL'
 
 const defaultOpenGraph: Metadata['openGraph'] = {
   type: 'website',
-  description: 'Belflat — a modern website powered by Payload CMS and Next.js.',
+  description: 'belflat.be — Belgium Flat. Belgische woningorganisatie met bewonersportaal en hulp.',
   images: [
     {
       url: `${getServerSideURL()}/website-template-OG.webp`,
     },
   ],
-  siteName: 'Belflat',
-  title: 'Belflat',
+  siteName: 'belflat.be — Belgium Flat',
+  title: 'belflat.be — Belgium Flat',
 }
 
 export const mergeOpenGraph = (og?: Metadata['openGraph']): Metadata['openGraph'] => {

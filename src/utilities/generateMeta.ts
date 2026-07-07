@@ -27,8 +27,8 @@ export const generateMeta = async (args: {
   const ogImage = getImageURL(doc?.meta?.image)
 
   const title = doc?.meta?.title
-    ? doc?.meta?.title + ' | Belflat'
-    : 'Belflat'
+    ? doc?.meta?.title + ' | belflat.be'
+    : 'belflat.be — Belgium Flat'
 
   return {
     description: doc?.meta?.description,

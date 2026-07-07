@@ -3,7 +3,7 @@ import React from 'react'
 
 import {
   CircleHelp,
-  CreditCard,
+  Coins,
   Laptop,
   Search,
   UserRound,
@@ -11,81 +11,74 @@ import {
 } from 'lucide-react'
 
 const actions = [
-  {
-    href: '/posts',
-    icon: Laptop,
-    label: 'Inschrijven als woningzoekende',
-  },
-  {
-    href: '/bewonersportaal#reparaties',
-    icon: Wrench,
-    label: 'Reparaties',
-  },
-  {
-    href: '/bewonersportaal#huur',
-    icon: CreditCard,
-    label: 'Huur betalen',
-  },
-  {
-    href: '/bewonersportaal',
-    icon: UserRound,
-    label: 'Mijn Belflat',
-  },
-  {
-    href: '/hulp',
-    icon: CircleHelp,
-    label: 'Hulp nodig',
-  },
+  { href: '/posts', icon: Laptop, label: 'Inschrijven als woningzoekende' },
+  { href: '/bewonersportaal#reparaties', icon: Wrench, label: 'Reparaties' },
+  { href: '/bewonersportaal#huur', icon: Coins, label: 'Huur betalen' },
+  { href: '/bewonersportaal', icon: UserRound, label: 'Mijn belflat' },
+  { href: '/hulp', icon: CircleHelp, label: 'Veelgestelde vragen' },
 ]
 
 export const FlatBanner: React.FC = () => {
   return (
-    <section className="portal-flat-banner">
+    <section className="bf-hero">
       <div
-        className="portal-flat-banner__image"
+        className="bf-hero__photo"
         style={{ backgroundImage: "url('/portal/hero.jpg')" }}
       />
-      <div className="container relative">
-        <div className="portal-flat-banner__grid">
-          <div className="portal-flat-banner__action-box">
-            <p className="portal-flat-banner__eyebrow">Ik heb een vraag over</p>
-            <h1 className="portal-flat-banner__title">Wonen bij Belflat</h1>
-            <form action="/search" className="portal-flat-banner__search" method="get">
-              <Search className="size-5 shrink-0 opacity-70" />
+
+      <div className="container">
+        <div className="bf-hero__layout">
+          <div className="bf-hero__red">
+            <p className="bf-hero__lead">Ik heb een vraag over</p>
+
+            <form action="/search" className="bf-hero__search" method="get">
+              <Search aria-hidden className="size-5 shrink-0 text-[var(--bf-grey)]" />
               <input
-                aria-label="Zoeken"
-                className="portal-flat-banner__search-input"
+                aria-label="Zoek op trefwoord"
+                className="bf-hero__search-input"
                 name="q"
-                placeholder="Zoek op trefwoord, reparatie of huur..."
+                placeholder="Zoek op trefwoord"
                 type="search"
               />
             </form>
-            <div className="portal-flat-banner__quick">
+
+            <div className="bf-hero__icons">
               {actions.map(({ href, icon: Icon, label }) => (
-                <Link className="portal-quick-link" href={href} key={href}>
-                  <Icon className="size-5" />
+                <Link className="bf-hero__icon-link" href={href} key={href}>
+                  <Icon strokeWidth={1.75} />
                   <span>{label}</span>
                 </Link>
               ))}
             </div>
           </div>
 
-          <aside className="portal-flat-banner__side-card">
-            <h2 className="portal-side-card__title">Bekijk actueel aanbod</h2>
-            <ul className="portal-side-card__list">
-              <li>
-                <Link href="/posts">Nieuwbouw in de wijk</Link>
-              </li>
-              <li>
-                <Link href="/posts">Direct te huur</Link>
-              </li>
-              <li>
-                <Link href="/bewonersportaal">Reparatieverzoek indienen</Link>
-              </li>
-            </ul>
-            <Link className="portal-side-card__cta" href="/hulp">
-              Hulp nodig? Bekijk veelgestelde vragen
-            </Link>
+          <aside className="bf-hero__white">
+            <div>
+              <h2 className="bf-hero__white-title">
+                Hoe helpt belflat.be bij uw woonvragen?
+              </h2>
+              <Link className="bf-hero__white-link" href="/hulp">
+                Veelgestelde vragen voor bewoners
+              </Link>
+            </div>
+
+            <div>
+              <h2 className="bf-hero__white-title">Bekijk actueel aanbod</h2>
+              <ul className="bf-hero__white-list">
+                <li>
+                  <Link href="/posts">Huurwoningen Brussel</Link>
+                </li>
+                <li>
+                  <Link href="/posts">Huurwoningen Antwerpen</Link>
+                </li>
+                <li>
+                  <Link href="/posts">Huren in Gent</Link>
+                </li>
+                <li>
+                  <Link href="/posts">Nieuwbouwprojecten</Link>
+                </li>
+              </ul>
+            </div>
           </aside>
         </div>
       </div>

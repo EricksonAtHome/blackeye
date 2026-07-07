@@ -5,7 +5,7 @@ import { ArrowRight, Mail, MessageSquare } from 'lucide-react'
 
 const sections = [
   {
-    description: 'Bekijk berichten, documenten en updates van Belflat op één plek.',
+    description: 'Bekijk berichten, documenten en updates van belflat.be op één plek.',
     href: '/bewonersportaal#berichten',
     id: 'berichten',
     title: 'Berichtenbox',
@@ -47,7 +47,7 @@ export const PortalDashboard: React.FC = () => {
             <div className="mt-4 flex items-start gap-3 text-sm">
               <Mail className="mt-0.5 size-5 text-[var(--portal-teal)]" />
               <div>
-                <p className="font-medium">bewoner@belflat.nl</p>
+                <p className="font-medium">bewoner@belflat.be</p>
                 <Link className="portal-inline-link" href="/bewonersportaal#gegevens">
                   Wijzigen
                 </Link>

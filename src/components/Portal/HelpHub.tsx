@@ -22,7 +22,7 @@ const faqs = [
   },
   {
     answer:
-      'Log in op Mijn Belflat met uw e-mailadres. Nog geen account? Neem contact op met de servicedesk.',
+      'Log in op Mijn belflat met uw e-mailadres. Nog geen account? Neem contact op met de servicedesk.',
     id: 'portaal',
     question: 'Hoe kom ik in het bewonersportaal?',
   },
@@ -37,7 +37,7 @@ export const HelpHub: React.FC = () => {
           <h1 className="portal-help-intro__title">Waarmee kunnen we u helpen?</h1>
           <p className="portal-help-intro__text">
             Vind antwoorden over huur, reparaties en uw bewonersportaal. Staat uw vraag er niet bij?
-            Neem contact op met Belflat.
+            Neem contact op met belflat.be.
           </p>
           <div className="portal-help-intro__actions">
             <Link className="portal-cta-button portal-cta-button--teal" href="/bewonersportaal">

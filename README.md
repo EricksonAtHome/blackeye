@@ -1,14 +1,23 @@
-# Belflat
+# belflat.be — Belgium Flat
 
-Belflat is a [Payload CMS](https://payloadcms.com) website for a Dutch housing association, with a **bewonersportaal** (resident portal), help section, and flat banner homepage inspired by MijnOverheid, Intermaris, and Gebouwenpas.
+**belflat.be** is Belgium Flat: a Belgian housing portal built with [Payload CMS](https://payloadcms.com), styled after Intermaris with a flat red banner, bewonersportaal, and help section.
 
-![Belflat homepage](docs/screenshots/belflat-home.png)
+![belflat.be homepage](docs/screenshots/belflat-home.png)
 
 ![Belflat bewonersportaal](docs/screenshots/belflat-bewonersportaal.png)
 
 ![Belflat hulp](docs/screenshots/belflat-hulp.png)
 
 ![Belflat admin login](docs/screenshots/belflat-admin-login.png)
+
+## Public pages
+
+| Route | Description |
+|-------|-------------|
+| `/` | Homepage with flat banner, quick actions, and portal overview |
+| `/bewonersportaal` | Resident portal dashboard (berichten, zaken, gegevens) |
+| `/hulp` | Help hub with FAQ and contact actions |
+| `/admin` | Payload CMS admin panel |
 
 ## Stack
 

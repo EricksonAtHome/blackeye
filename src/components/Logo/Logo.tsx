@@ -3,26 +3,22 @@ import React from 'react'
 
 interface Props {
   className?: string
-  variant?: 'default' | 'light'
 }
 
-export const Logo = ({ className, variant = 'default' }: Props) => {
+export const Logo = ({ className }: Props) => {
   return (
-    <span
-      className={clsx(
-        'inline-flex items-baseline gap-1 font-bold tracking-tight',
-        variant === 'light' ? 'text-white' : 'text-[var(--portal-navy)]',
-        className,
-      )}
-    >
-      <span className="text-[1.35rem] leading-none">Belflat</span>
-      <span
-        className={clsx(
-          'text-xs font-medium uppercase tracking-[0.2em]',
-          variant === 'light' ? 'text-white/80' : 'text-[var(--portal-orange)]',
-        )}
-      >
-        Wonen
+    <span className={clsx('bf-logo inline-flex items-center gap-2.5', className)}>
+      <span aria-hidden className="bf-logo__mark">
+        <svg fill="none" height="34" viewBox="0 0 34 34" width="34" xmlns="http://www.w3.org/2000/svg">
+          <rect fill="#E34255" height="34" rx="4" width="10" />
+          <rect fill="#333333" height="34" rx="4" width="10" x="12" />
+          <rect fill="#E34255" height="34" opacity="0.85" rx="4" width="10" x="24" />
+        </svg>
+      </span>
+      <span className="bf-logo__text">
+        <span className="bf-logo__name">belflat</span>
+        <span className="bf-logo__domain">.be</span>
+        <span className="bf-logo__tagline">Belgium Flat</span>
       </span>
     </span>
   )

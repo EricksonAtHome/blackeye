@@ -9,14 +9,13 @@ import type { Header as HeaderType } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Logo } from '@/components/Logo/Logo'
 import { cn } from '@/utilities/ui'
-import { UserRound } from 'lucide-react'
+import { Search, UserRound } from 'lucide-react'
 
 const defaultNav = [
-  { label: 'Home', href: '/' },
+  { label: 'Ik huur', href: '/bewonersportaal' },
   { label: 'Ik zoek', href: '/posts' },
-  { label: 'Bewonersportaal', href: '/bewonersportaal' },
-  { label: 'Hulp', href: '/hulp' },
-  { label: 'Over Belflat', href: '/contact' },
+  { label: 'Over belflat', href: '/contact' },
+  { label: 'Contact', href: '/contact' },
 ]
 
 export const MainNav: React.FC<{ data: HeaderType }> = ({ data }) => {
@@ -24,27 +23,22 @@ export const MainNav: React.FC<{ data: HeaderType }> = ({ data }) => {
   const cmsItems = data?.navItems || []
 
   return (
-    <div className="portal-main-nav">
-      <div className="container flex flex-col gap-4 py-4 lg:flex-row lg:items-center lg:justify-between">
+    <div className="bf-header">
+      <div className="container bf-header__inner">
         <Link href="/">
-          <Logo variant="light" />
+          <Logo />
         </Link>
 
-        <nav className="flex flex-wrap items-center gap-1">
+        <nav className="bf-header__nav hidden lg:flex">
           {cmsItems.length > 0
             ? cmsItems.map(({ link }, i) => (
-                <CMSLink
-                  className="portal-nav-link"
-                  key={i}
-                  {...link}
-                  appearance="link"
-                />
+                <CMSLink className="bf-header__link" key={i} {...link} appearance="link" />
               ))
             : defaultNav.map((item) => {
                 const active = pathname === item.href
                 return (
                   <Link
-                    className={cn('portal-nav-link', active && 'portal-nav-link--active')}
+                    className={cn('bf-header__link', active && 'bf-header__link--active')}
                     href={item.href}
                     key={item.href}
                   >
@@ -54,10 +48,15 @@ export const MainNav: React.FC<{ data: HeaderType }> = ({ data }) => {
               })}
         </nav>
 
-        <Link className="portal-cta-button" href="/bewonersportaal">
-          <UserRound className="size-4" />
-          Mijn Belflat
-        </Link>
+        <div className="bf-header__actions">
+          <Link aria-label="Zoeken" className="bf-header__search" href="/search">
+            <Search className="size-5" />
+          </Link>
+          <Link className="bf-cta" href="/bewonersportaal">
+            <UserRound className="size-4" />
+            Mijn belflat
+          </Link>
+        </div>
       </div>
     </div>
   )

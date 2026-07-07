@@ -10,7 +10,6 @@ const footerLinks = [
   { label: 'Bewonersportaal', href: '/bewonersportaal' },
   { label: 'Hulp', href: '/hulp' },
   { label: 'Contact', href: '/contact' },
-  { label: 'Privacy', href: '/contact' },
 ]
 
 export async function Footer() {
@@ -25,8 +24,8 @@ export async function Footer() {
             <Logo />
           </Link>
           <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--portal-muted)]">
-            Belflat is uw woningcorporatie voor betaalbaar en prettig wonen in de wijk. Vragen?
-            Bel ons of bezoek het bewonersportaal.
+            belflat.be — Belgium Flat is uw Belgische woningorganisatie voor betaalbaar en
+            prettig wonen. Vragen? Bezoek het bewonersportaal of onze hulppagina.
           </p>
         </div>
 
@@ -48,8 +47,8 @@ export async function Footer() {
         <div>
           <h2 className="portal-footer-heading">Contact</h2>
           <ul className="mt-3 space-y-2 text-sm text-[var(--portal-muted)]">
-            <li>Telefoon: 0800 – 123 456</li>
-            <li>E-mail: info@belflat.nl</li>
+            <li>Telefoon: 0800 12 34 56</li>
+            <li>E-mail: info@belflat.be</li>
             <li>Ma–vr 08:30 – 17:00</li>
           </ul>
         </div>
@@ -57,7 +56,7 @@ export async function Footer() {
 
       <div className="border-t border-[var(--portal-border)]">
         <div className="container flex flex-col gap-2 py-4 text-xs text-[var(--portal-muted)] sm:flex-row sm:justify-between">
-          <span>© {new Date().getFullYear()} Belflat Wonen</span>
+          <span>© {new Date().getFullYear()} belflat.be — Belgium Flat</span>
           <span>Disclaimer · Toegankelijkheid · Cookies</span>
         </div>
       </div>
