@@ -1,12 +1,16 @@
 # Belflat
 
-Belflat is a [Payload CMS](https://payloadcms.com) website built with the official website template and Next.js.
+Belflat is a [Payload CMS](https://payloadcms.com) website built with the official website template and Next.js, backed by **Neon PostgreSQL**.
+
+![Belflat homepage](docs/screenshots/belflat-home.png)
+
+![Belflat admin panel](docs/screenshots/belflat-admin.png)
 
 ## Stack
 
 - **Payload CMS 3** — headless CMS and admin panel
 - **Next.js** — React framework with App Router
-- **SQLite** — local development database (switch to PostgreSQL for production)
+- **Neon PostgreSQL** — serverless Postgres database
 
 ## Quick Start
 
@@ -16,7 +20,7 @@ Belflat is a [Payload CMS](https://payloadcms.com) website built with the offici
 npm install
 ```
 
-2. Copy environment variables:
+2. Copy environment variables and set your Neon connection string:
 
 ```bash
 cp .env.example .env
@@ -49,19 +53,21 @@ On first visit to the admin panel, create your admin user account.
 
 | Variable | Description |
 |----------|-------------|
-| `DATABASE_URL` | SQLite file path or PostgreSQL connection string |
+| `DATABASE_URL` | Neon PostgreSQL connection string |
 | `PAYLOAD_SECRET` | Secret key for JWT encryption |
 | `NEXT_PUBLIC_SERVER_URL` | Public site URL (no trailing slash) |
 | `CRON_SECRET` | Secret for cron job authentication |
 | `PREVIEW_SECRET` | Secret for draft preview requests |
 
-## Production
-
-For production, use PostgreSQL instead of SQLite:
+Example `DATABASE_URL` format:
 
 ```bash
-DATABASE_URL=postgresql://user:password@host:5432/belflat
+DATABASE_URL=postgresql://user:password@host/neondb?sslmode=require
 ```
+
+## Production
+
+The app is configured for Neon PostgreSQL. Set your production `DATABASE_URL`, `PAYLOAD_SECRET`, and `NEXT_PUBLIC_SERVER_URL` in your hosting provider's environment variables.
 
 See the [Payload deployment docs](https://payloadcms.com/docs/production/deployment) for hosting options.
 
