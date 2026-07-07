@@ -3,27 +3,27 @@ import React from 'react'
 
 interface Props {
   className?: string
-  loading?: 'lazy' | 'eager'
-  priority?: 'auto' | 'high' | 'low'
+  variant?: 'default' | 'light'
 }
 
-export const Logo = (props: Props) => {
-  const { loading: loadingFromProps, priority: priorityFromProps, className } = props
-
-  const loading = loadingFromProps || 'lazy'
-  const priority = priorityFromProps || 'low'
-
+export const Logo = ({ className, variant = 'default' }: Props) => {
   return (
-    /* eslint-disable @next/next/no-img-element */
-    <img
-      alt="Belflat Logo"
-      width={193}
-      height={34}
-      loading={loading}
-      fetchPriority={priority}
-      decoding="async"
-      className={clsx('max-w-[9.375rem] w-full h-[34px]', className)}
-      src="https://raw.githubusercontent.com/payloadcms/payload/3.x/packages/ui/src/assets/payload-logo-light.svg"
-    />
+    <span
+      className={clsx(
+        'inline-flex items-baseline gap-1 font-bold tracking-tight',
+        variant === 'light' ? 'text-white' : 'text-[var(--portal-navy)]',
+        className,
+      )}
+    >
+      <span className="text-[1.35rem] leading-none">Belflat</span>
+      <span
+        className={clsx(
+          'text-xs font-medium uppercase tracking-[0.2em]',
+          variant === 'light' ? 'text-white/80' : 'text-[var(--portal-orange)]',
+        )}
+      >
+        Wonen
+      </span>
+    </span>
   )
 }

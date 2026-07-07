@@ -8,6 +8,7 @@ import React, { cache } from 'react'
 import { homeStatic } from '@/endpoints/seed/home-static'
 
 import { RenderBlocks } from '@/blocks/RenderBlocks'
+import { PortalHome } from '@/components/Portal/PortalHome'
 import { RenderHero } from '@/heros/RenderHero'
 import { generateMeta } from '@/utilities/generateMeta'
 import PageClient from './page.client'
@@ -65,17 +66,24 @@ export default async function Page({ params: paramsPromise }: Args) {
   }
 
   const { hero, layout } = page
+  const isPortalHome = decodedSlug === 'home' && (!layout || layout.length === 0)
 
   return (
-    <article className="pt-16 pb-24">
+    <article className={isPortalHome ? '' : 'pt-16 pb-24'}>
       <PageClient />
       {/* Allows redirects for valid pages too */}
       <PayloadRedirects disableNotFound url={url} />
 
       {draft && <LivePreviewListener />}
 
-      <RenderHero {...hero} />
-      <RenderBlocks blocks={layout} />
+      {isPortalHome ? (
+        <PortalHome />
+      ) : (
+        <>
+          <RenderHero {...hero} />
+          <RenderBlocks blocks={layout} />
+        </>
+      )}
     </article>
   )
 }

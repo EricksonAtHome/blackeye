@@ -1,12 +1,14 @@
 # Belflat
 
-Belflat is a [Payload CMS](https://payloadcms.com) website built with the official website template and Next.js, backed by **Neon PostgreSQL**.
+Belflat is a [Payload CMS](https://payloadcms.com) website for a Dutch housing association, with a **bewonersportaal** (resident portal), help section, and flat banner homepage inspired by MijnOverheid, Intermaris, and Gebouwenpas.
 
 ![Belflat homepage](docs/screenshots/belflat-home.png)
 
-![Belflat admin login](docs/screenshots/belflat-admin-login.png)
+![Belflat bewonersportaal](docs/screenshots/belflat-bewonersportaal.png)
 
-![Belflat admin sign up](docs/screenshots/belflat-admin-signup.png)
+![Belflat hulp](docs/screenshots/belflat-hulp.png)
+
+![Belflat admin login](docs/screenshots/belflat-admin-login.png)
 
 ## Stack
 
