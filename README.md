@@ -4,7 +4,9 @@ Belflat is a [Payload CMS](https://payloadcms.com) website built with the offici
 
 ![Belflat homepage](docs/screenshots/belflat-home.png)
 
-![Belflat admin panel](docs/screenshots/belflat-admin.png)
+![Belflat admin login](docs/screenshots/belflat-admin-login.png)
+
+![Belflat admin sign up](docs/screenshots/belflat-admin-signup.png)
 
 ## Stack
 
