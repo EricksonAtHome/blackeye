@@ -16,7 +16,7 @@ export const metadata: Metadata = {
 export default function BewonersportaalPage() {
   return (
     <div className="portal-page">
-      <section className="portal-dashboard border-b border-[var(--portal-border)] pt-8">
+      <section className="portal-page__intro">
         <div className="container">
           <h1 className="portal-help-intro__title">Mijn bewonersportaal</h1>
           <p className="portal-help-intro__text">

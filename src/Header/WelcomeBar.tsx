@@ -6,8 +6,8 @@ type Props = {
 
 export const WelcomeBar: React.FC<Props> = ({ name = 'bewoner' }) => {
   return (
-    <div className="portal-welcome-bar">
-      <div className="container py-2 text-sm font-medium">
+    <div className="bf-welcome">
+      <div className="container bf-welcome__inner">
         Welkom op belflat.be — hallo {name}
       </div>
     </div>

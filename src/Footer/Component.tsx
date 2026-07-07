@@ -23,7 +23,7 @@ export async function Footer() {
           <Link href="/">
             <Logo />
           </Link>
-          <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--portal-muted)]">
+          <p className="mt-4 max-w-sm text-sm leading-relaxed text-[var(--bf-grey)]">
             belflat.be — Belgium Flat is uw Belgische woningorganisatie voor betaalbaar en
             prettig wonen. Vragen? Bezoek het bewonersportaal of onze hulppagina.
           </p>
@@ -46,7 +46,7 @@ export async function Footer() {
 
         <div>
           <h2 className="portal-footer-heading">Contact</h2>
-          <ul className="mt-3 space-y-2 text-sm text-[var(--portal-muted)]">
+          <ul className="mt-3 space-y-2 text-sm leading-relaxed text-[var(--bf-grey)]">
             <li>Telefoon: 0800 12 34 56</li>
             <li>E-mail: info@belflat.be</li>
             <li>Ma–vr 08:30 – 17:00</li>
@@ -54,8 +54,8 @@ export async function Footer() {
         </div>
       </div>
 
-      <div className="border-t border-[var(--portal-border)]">
-        <div className="container flex flex-col gap-2 py-4 text-xs text-[var(--portal-muted)] sm:flex-row sm:justify-between">
+      <div className="border-t border-[var(--bf-border)]">
+        <div className="container flex flex-col gap-2 py-4 text-xs leading-relaxed text-[var(--bf-grey)] sm:flex-row sm:justify-between">
           <span>© {new Date().getFullYear()} belflat.be — Belgium Flat</span>
           <span>Disclaimer · Toegankelijkheid · Cookies</span>
         </div>

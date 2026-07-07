@@ -14,7 +14,7 @@ import { Search, UserRound } from 'lucide-react'
 const defaultNav = [
   { label: 'Ik huur', href: '/bewonersportaal' },
   { label: 'Ik zoek', href: '/posts' },
-  { label: 'Over belflat', href: '/contact' },
+  { label: 'Over belflat', href: '/over-belflat' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -40,7 +40,7 @@ export const MainNav: React.FC<{ data: HeaderType }> = ({ data }) => {
                   <Link
                     className={cn('bf-header__link', active && 'bf-header__link--active')}
                     href={item.href}
-                    key={item.href}
+                    key={item.label}
                   >
                     {item.label}
                   </Link>
