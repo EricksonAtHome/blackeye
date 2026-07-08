@@ -7,6 +7,7 @@ import React, { useEffect } from 'react'
 import type { Header } from '@/payload-types'
 
 import { MainNav } from './MainNav'
+import { UtilityBar } from './UtilityBar'
 import { WelcomeBar } from './WelcomeBar'
 
 interface HeaderClientProps {
@@ -24,6 +25,7 @@ export const HeaderClient: React.FC<HeaderClientProps> = ({ data }) => {
 
   return (
     <header className="portal-header relative z-30">
+      <UtilityBar />
       {showWelcome && <WelcomeBar />}
       <MainNav data={data} />
     </header>

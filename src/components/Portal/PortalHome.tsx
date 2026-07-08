@@ -1,15 +1,17 @@
 import React from 'react'
 
-import { FlatBanner } from './FlatBanner'
-import { NewsStrip } from './NewsStrip'
-import { PortalDashboard } from './PortalDashboard'
+import { FeatureBar } from './FeatureBar'
+import { NewsFaqColumns } from './NewsFaqColumns'
+import { QuickActionsGrid } from './QuickActionsGrid'
+import { ResidenceHero } from './ResidenceHero'
 
 export const PortalHome: React.FC = () => {
   return (
     <>
-      <FlatBanner />
-      <NewsStrip />
-      <PortalDashboard />
+      <ResidenceHero />
+      <FeatureBar />
+      <NewsFaqColumns />
+      <QuickActionsGrid />
     </>
   )
 }

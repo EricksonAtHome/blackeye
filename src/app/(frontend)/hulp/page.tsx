@@ -5,11 +5,11 @@ import { HelpHub } from '@/components/Portal/HelpHub'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 
 export const metadata: Metadata = {
-  description: 'Hulp, veelgestelde vragen en contact voor bewoners van belflat.be.',
+  description: 'Hulp, veelgestelde vragen en contact voor bewoners van Belflat Residence.',
   openGraph: mergeOpenGraph({
-    title: 'Hulp | belflat.be',
+    title: 'Hulp | Belflat Residence',
   }),
-  title: 'Hulp | belflat.be',
+  title: 'Hulp | Belflat Residence',
 }
 
 export default function HulpPage() {

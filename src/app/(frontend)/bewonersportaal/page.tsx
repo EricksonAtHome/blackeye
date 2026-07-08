@@ -6,11 +6,11 @@ import { StatusCards } from '@/components/Portal/StatusCards'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
 
 export const metadata: Metadata = {
-  description: 'Bewonersportaal van belflat.be — berichten, reparaties, huur en persoonlijke gegevens.',
+  description: 'Bewonersportaal van Belflat Residence — berichten, reparaties, huur en persoonlijke gegevens.',
   openGraph: mergeOpenGraph({
-    title: 'Bewonersportaal | belflat.be',
+    title: 'Bewonersportaal | Belflat Residence',
   }),
-  title: 'Bewonersportaal | belflat.be',
+  title: 'Bewonersportaal | Belflat Residence',
 }
 
 export default function BewonersportaalPage() {

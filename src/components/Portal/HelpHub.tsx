@@ -37,7 +37,7 @@ export const HelpHub: React.FC = () => {
           <h1 className="portal-help-intro__title">Waarmee kunnen we u helpen?</h1>
           <p className="portal-help-intro__text">
             Vind antwoorden over huur, reparaties en uw bewonersportaal. Staat uw vraag er niet bij?
-            Neem contact op met belflat.be.
+            Neem contact op met Belflat Residence.
           </p>
           <div className="portal-help-intro__actions">
             <Link className="portal-cta-button portal-cta-button--teal" href="/bewonersportaal">
