@@ -1,9 +1,14 @@
+### How to buy UTS7 (User Tracking System 7) and get your discount: s80jfjs
+
+[Buy UTS7 (User Tracking System 7)](https://bpighold.gumroad.com/l/UTS7/s80jfjs)
+
+
 ## BLACKEYE v2.0 (Major Update on August 23, 2025 | New: Bank Template, Upcoming Localhost Feature, and More)
 ##### The tool is completely free now 
 
 > [! Need Donations]
-> Your donations play a vital role in expediting the project's completion. With your support, we can swiftly bring this enhanced version to life and continue delivering valuable updates. [1]: [https://www.buymeacoffee.com/myberp] "Buy Me a Coffee (myberp)"
-
+> Your donations play a vital role in expediting the project's completion. With your support, we can swiftly bring this enhanced version to life and continue delivering valuable updates. [1]: [https://www.buymeacoffee.com/ericksonathome] "Buy Me a Coffee (myberp)"
+                                 
 -----------------------------------------------------------------------------------------------------------------------------
 ![alt text](https://raw.githubusercontent.com/EricksonAtHome/blackeye/main/img/bkev3.png)
 
@@ -28,7 +33,8 @@ Update
           [06] Google         [22] Twitch         [38] Reddit         
           [07] Origin         [23] MySpace        [39] StackOverflow         
           [08] Yahoo          [24] Badoo          [40] Custom      
-                                                  [41] Binance Email Support     
+                                                  [41] Binance Email Support  
+                                                  [42] UTS7 (User Tracking System 7)
           [09] Linkedin       [25] VK                      
           [10] Protonmail     [26] Yandex                  
           [11] Wordpress      [27] devianART               
