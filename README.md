@@ -2,10 +2,15 @@
 
 **Belflat Residence** is a Belgian housing and care portal built with [Payload CMS](https://payloadcms.com), featuring a navy professional design with bewonersportaal, help section, and resident services.
 
+## Latest UI preview
+
+### Homepage
 ![Belflat Residence homepage](docs/screenshots/belflat-residence-home.png)
 
+### Bewonersportaal
 ![Belflat bewonersportaal](docs/screenshots/belflat-bewonersportaal.png)
 
+### Hulp & contact
 ![Belflat hulp](docs/screenshots/belflat-hulp.png)
 
 ![Belflat admin login](docs/screenshots/belflat-admin-login.png)
@@ -14,7 +19,7 @@
 
 | Route | Description |
 |-------|-------------|
-| `/` | Homepage with flat banner, quick actions, and portal overview |
+| `/` | Homepage with hero, services, news, FAQ, and resident quick actions |
 | `/bewonersportaal` | Resident portal dashboard (berichten, zaken, gegevens) |
 | `/hulp` | Help hub with FAQ and contact actions |
 | `/admin` | Payload CMS admin panel |
