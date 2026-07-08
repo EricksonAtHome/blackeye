@@ -9,27 +9,12 @@ import type { Header as HeaderType } from '@/payload-types'
 import { CMSLink } from '@/components/Link'
 import { Logo } from '@/components/Logo/Logo'
 import { cn } from '@/utilities/ui'
-import { ChevronDown } from 'lucide-react'
+import { Search, UserRound } from 'lucide-react'
 
-const defaultNav: Array<{
-  label: string
-  href: string
-  children?: Array<{ label: string; href: string }>
-}> = [
-  { label: 'Home', href: '/' },
-  { label: 'Over ons', href: '/over-belflat' },
-  {
-    label: 'Voor bewoners',
-    href: '/bewonersportaal',
-    children: [
-      { label: 'Bewonersportaal', href: '/bewonersportaal' },
-      { label: 'Reparatie melden', href: '/bewonersportaal#reparaties' },
-      { label: 'Huur betalen', href: '/bewonersportaal#huur' },
-      { label: 'Hulp & contact', href: '/hulp' },
-    ],
-  },
-  { label: 'Vacatures', href: '/posts' },
-  { label: 'Nieuws', href: '/posts' },
+const defaultNav = [
+  { label: 'Ik huur', href: '/bewonersportaal' },
+  { label: 'Ik zoek', href: '/posts' },
+  { label: 'Over belflat', href: '/over-belflat' },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -38,44 +23,22 @@ export const MainNav: React.FC<{ data: HeaderType }> = ({ data }) => {
   const cmsItems = data?.navItems || []
 
   return (
-    <div className="br-header">
-      <div className="container br-header__inner">
+    <div className="bf-header">
+      <div className="container bf-header__inner">
         <Link href="/">
           <Logo />
         </Link>
 
-        <nav aria-label="Hoofdnavigatie" className="br-header__nav">
+        <nav className="bf-header__nav hidden lg:flex">
           {cmsItems.length > 0
             ? cmsItems.map(({ link }, i) => (
-                <CMSLink className="br-header__link" key={i} {...link} appearance="link" />
+                <CMSLink className="bf-header__link" key={i} {...link} appearance="link" />
               ))
             : defaultNav.map((item) => {
-                const active =
-                  item.href === '/'
-                    ? pathname === '/'
-                    : pathname === item.href || pathname.startsWith(`${item.href}/`)
-
-                if (item.children) {
-                  return (
-                    <details className="br-header__dropdown" key={item.label}>
-                      <summary>
-                        {item.label}
-                        <ChevronDown className="size-3.5" />
-                      </summary>
-                      <ul className="br-header__dropdown-menu">
-                        {item.children.map((child) => (
-                          <li key={child.label}>
-                            <Link href={child.href}>{child.label}</Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </details>
-                  )
-                }
-
+                const active = pathname === item.href
                 return (
                   <Link
-                    className={cn('br-header__link', active && 'br-header__link--active')}
+                    className={cn('bf-header__link', active && 'bf-header__link--active')}
                     href={item.href}
                     key={item.label}
                   >
@@ -84,6 +47,16 @@ export const MainNav: React.FC<{ data: HeaderType }> = ({ data }) => {
                 )
               })}
         </nav>
+
+        <div className="bf-header__actions">
+          <Link aria-label="Zoeken" className="bf-header__search" href="/search">
+            <Search className="size-5" />
+          </Link>
+          <Link className="bf-cta" href="/bewonersportaal">
+            <UserRound className="size-4" />
+            Mijn belflat
+          </Link>
+        </div>
       </div>
     </div>
   )

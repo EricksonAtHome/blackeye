@@ -1,6 +1,6 @@
 @import 'tailwindcss';
 @import 'tw-animate-css';
-@import '../../styles/residence.css';
+@import '../../styles/intermaris.css';
 
 @config '../../../tailwind.config.mjs';
 
@@ -94,7 +94,7 @@
   --card-foreground: oklch(14.5% 0 0deg);
   --popover: oklch(100% 0 0deg);
   --popover-foreground: oklch(14.5% 0 0deg);
-  --primary: var(--br-navy, #1a2b49);
+  --primary: var(--bf-charcoal, #333333);
   --primary-foreground: oklch(98.5% 0 0deg);
   --secondary: oklch(97% 0 0deg);
   --secondary-foreground: oklch(20.5% 0 0deg);

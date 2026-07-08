@@ -45,7 +45,7 @@ export const PortalDashboard: React.FC = () => {
           <div className="portal-panel portal-panel--accent">
             <h2 className="portal-panel__title portal-panel__title--accent">Accountgegevens</h2>
             <div className="mt-4 flex items-start gap-3 text-sm">
-              <Mail className="mt-0.5 size-5 text-[var(--br-navy)]" />
+              <Mail className="mt-0.5 size-5 text-[var(--bf-red)]" />
               <div>
                 <p className="font-medium">bewoner@belflat.be</p>
                 <Link className="portal-inline-link" href="/bewonersportaal#gegevens">

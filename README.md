@@ -1,8 +1,8 @@
-# Belflat Residence
+# belflat.be — Belgium Flat
 
-**Belflat Residence** is a Belgian housing and care portal built with [Payload CMS](https://payloadcms.com), featuring a navy professional design with bewonersportaal, help section, and resident services.
+**belflat.be** is Belgium Flat: a Belgian housing portal built with [Payload CMS](https://payloadcms.com), styled after Intermaris with a flat red banner, bewonersportaal, and help section.
 
-![Belflat Residence homepage](docs/screenshots/belflat-residence-home.png)
+![belflat.be homepage](docs/screenshots/belflat-home.png)
 
 ![Belflat bewonersportaal](docs/screenshots/belflat-bewonersportaal.png)
 

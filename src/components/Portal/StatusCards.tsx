@@ -38,10 +38,10 @@ export const StatusCards: React.FC = () => {
         <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
           {cards.map(({ href, icon: Icon, status, title }) => (
             <Link className="portal-status-card" href={href} key={title}>
-              <Icon className="size-6 text-[var(--br-navy)]" />
+              <Icon className="size-6 text-[var(--bf-red)]" />
               <div>
-                <h3 className="font-semibold text-[var(--br-navy)]">{title}</h3>
-                <p className="mt-1 text-sm text-[var(--br-grey-text)]">{status}</p>
+                <h3 className="font-semibold text-[var(--bf-charcoal)]">{title}</h3>
+                <p className="mt-1 text-sm text-[var(--bf-grey)]">{status}</p>
               </div>
               <span className="portal-status-card__more">Meer</span>
             </Link>
