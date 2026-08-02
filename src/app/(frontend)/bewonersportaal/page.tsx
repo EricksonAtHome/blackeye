@@ -1,0 +1,31 @@
+import type { Metadata } from 'next'
+import React from 'react'
+
+import { PortalDashboard } from '@/components/Portal/PortalDashboard'
+import { StatusCards } from '@/components/Portal/StatusCards'
+import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
+
+export const metadata: Metadata = {
+  description: 'Bewonersportaal van belflat.be — berichten, reparaties, huur en persoonlijke gegevens.',
+  openGraph: mergeOpenGraph({
+    title: 'Bewonersportaal | belflat.be',
+  }),
+  title: 'Bewonersportaal | belflat.be',
+}
+
+export default function BewonersportaalPage() {
+  return (
+    <div className="portal-page">
+      <section className="portal-page__intro">
+        <div className="container">
+          <h1 className="portal-help-intro__title">Mijn bewonersportaal</h1>
+          <p className="portal-help-intro__text">
+            Beheer uw berichten, lopende zaken en persoonlijke gegevens op één plek.
+          </p>
+        </div>
+      </section>
+      <StatusCards />
+      <PortalDashboard />
+    </div>
+  )
+}
